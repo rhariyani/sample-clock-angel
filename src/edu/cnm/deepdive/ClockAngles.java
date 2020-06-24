@@ -24,35 +24,36 @@ package edu.cnm.deepdive;
  */
 public class ClockAngles {
 
-  private ClockAngles() {
-    // NOTE: There is NO need to do anything with this constructor! The methods
-    //       you will implement in this class are static; thus, there is no need
-    //       to create instances of this class.
-  }
+    private ClockAngles() {
+        // NOTE: There is NO need to do anything with this constructor! The methods
+        //       you will implement in this class are static; thus, there is no need
+        //       to create instances of this class.
+    }
 
-  /**
-   * Computes and returns the angle made by the hour hand, measured in degrees
-   * clockwise from straight up (12 o'clock on the clock face), in the interval
-   * [0, 360).
-   *
-   * @param hours   hour component of time, in {0, 1, &hellip;, 23}.
-   * @param minutes minute component of time, in [0&ndash;60).
-   * @return        angle (in degrees) to which hour hand is oriented.
-   */
-  public static double hourHandDegrees(int hours, double minutes) {
-    return 0; // TODO Replace this line with implementation.
-  }
+    /**
+     * Computes and returns the angle made by the hour hand, measured in degrees
+     * clockwise from straight up (12 o'clock on the clock face), in the interval
+     * [0, 360).
+     *
+     * @param hours   hour component of time, in {0, 1, &hellip;, 23}.
+     * @param minutes minute component of time, in [0&ndash;60).
+     * @return angle (in degrees) to which hour hand is oriented.
+     */
+    public static double hourHandDegrees(int hours, double minutes) {
+        return (hours + minutes / 60) % 12 * 30;
+    }
 
-  /**
-   * Computes and returns the angle made by the minute hand, measured in degrees
-   * clockwise from straight up (12 o'clock on the clock face), in the interval
-   * [0, 360).
-   *
-   * @param minutes minute component of time, in [0&ndash;60).
-   * @return        angle (in degrees) to which minute hand is oriented.
-   */
-  public static double minuteHandDegrees(double minutes) {
-    return 0; // TODO Replace this line with implementation.
-  }
+    /**
+     * Computes and returns the angle made by the minute hand, measured in degrees
+     * clockwise from straight up (12 o'clock on the clock face), in the interval
+     * [0, 360).
+     *
+     * @param minutes minute component of time, in [0&ndash;60).
+     * @return angle (in degrees) to which minute hand is oriented.
+     */
+    public static double minuteHandDegrees(double minutes) {
+        return minutes * 6;
+
+    }
 
 }
